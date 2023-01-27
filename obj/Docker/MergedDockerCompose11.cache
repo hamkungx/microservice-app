@@ -1,0 +1,48 @@
+name: dockercompose9457317087513817330
+services:
+  catalogdb:
+    command:
+    - mongod
+    - --port
+    - "27018"
+    container_name: catalogdb
+    image: mongo
+    networks:
+      micro-app-network: null
+    ports:
+    - mode: ingress
+      target: 27018
+      published: "27018"
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: catalogdb_data
+      target: /data/db
+      volume: {}
+  catalogservice.api:
+    build:
+      context: C:\Users\6501600\Documents\GitHub\microservice-app
+      dockerfile: Service/CatalogService/CatalogService.api/Dockerfile
+    container_name: catalogservice-api
+    depends_on:
+      catalogdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+    image: catalogserviceapi-api
+    networks:
+      micro-app-network: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7001"
+      protocol: tcp
+    restart: always
+networks:
+  micro-app-network:
+    name: micro-app-network
+    driver: bridge
+volumes:
+  catalogdb_data:
+    name: dockercompose9457317087513817330_catalogdb_data

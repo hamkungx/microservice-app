@@ -10,3 +10,15 @@ services:
         - catalogdb_data:/data/db
      networks:
         - micro-app-network
+
+  catalogservice.api:
+     container_name: catalogservice-api
+     environment:
+       - ASPNETCORE_ENVIRONMENT=Docker
+     restart: always
+     depends_on:
+       - catalogdb
+     ports:
+       - "7001:80"
+     networks:
+       - micro-app-network

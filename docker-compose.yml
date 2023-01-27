@@ -5,6 +5,12 @@ services:
      image: mongo
      command: mongod --port 27018
 
+  catalogservice.api:
+     image: ${DOCKER_REGISTRY-}catalogserviceapi-api
+     build:
+       context: .
+       dockerfile: Service/CatalogService/CatalogService.api/Dockerfile
+
 volumes:
    catalogdb_data:
 
