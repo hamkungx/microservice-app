@@ -2,14 +2,11 @@ version: '3.4'
 
 services:
   catalogdb:
-    container_name: catalogdb
-    restart: always
-    ports:
-        - "27017:27017"
-    volumes:
-        - mongo_data:/data/db
-  catalogservice.api:
-     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+     container_name: catalogdb
+     restart: always
      ports:
-      - "80"
+        - "27018:27018"
+     volumes:
+        - catalogdb_data:/data/db
+     networks:
+        - micro-app-network
