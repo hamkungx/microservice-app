@@ -41,3 +41,4 @@ C:\Users\6501600\Documents\GitHub\microservice-app\Service\CatalogService\Catalo
 C:\Users\6501600\Documents\GitHub\microservice-app\Service\CatalogService\CatalogService.api\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
 C:\Users\6501600\Documents\GitHub\microservice-app\Service\CatalogService\CatalogService.api\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
 C:\Users\6501600\Documents\GitHub\microservice-app\Service\CatalogService\CatalogService.api\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\Users\6501600\Documents\GitHub\microservice-app\Service\CatalogService\CatalogService.api\bin\Debug\net6.0\appsettings.Docker.json
